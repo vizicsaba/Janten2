@@ -22,3 +22,4 @@ int main() {
     sketch2::run<FaktorialisTest>();
     return 0;
 }
+
