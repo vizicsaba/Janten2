@@ -1,5 +1,5 @@
 #include <sketch2/sketch2.hpp>
-#include "faktorialis.cpp"  // Importáljuk a faktoriális függvényt
+#include "faktorialis.cpp"
 
 // Tesztelő osztály létrehozása
 class FaktorialisTest : public sketch2::TestSuite {
