@@ -16,14 +16,12 @@ jobs:
     - name: Kód klónozása
       uses: actions/checkout@v3
 
-    - name: Google Test telepítése
+    - name: Google Test telepítése CMake segítségével
       run: |
-        sudo apt-get update
-        sudo apt-get install -y googletest
-        sudo cmake /usr/src/googletest
-        sudo make
-        sudo cp -r googletest/include/gtest /usr/include
-        sudo cp lib/*.a /usr/lib
+        git clone https://github.com/google/googletest.git
+        cd googletest
+        cmake .
+        make
 
     - name: Faktoriális program és teszt buildelése
       run: |
