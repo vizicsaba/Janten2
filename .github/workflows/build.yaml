@@ -16,18 +16,18 @@ jobs:
     - name: Kód klónozása
       uses: actions/checkout@v3
 
-    - name: C++ fordító telepítése
-      run: sudo apt-get update && sudo apt-get install -y build-essential
-
-    - name: Sketch2 telepítése
+    - name: Google Test telepítése
       run: |
-        git clone https://github.com/user/sketch2.git
-        cd sketch2
-        sudo make install
+        sudo apt-get update
+        sudo apt-get install -y googletest
+        sudo cmake /usr/src/googletest
+        sudo make
+        sudo cp -r googletest/include/gtest /usr/include
+        sudo cp lib/*.a /usr/lib
 
     - name: Faktoriális program és teszt buildelése
       run: |
-        g++ faktorialis.cpp faktorialis_test.cpp -o faktorialis_test
+        g++ -o faktorialis_test faktorialis.cpp faktorialis_test.cpp -lgtest -lpthread
         echo "Build sikeres!"
 
     - name: Teszt futtatása
