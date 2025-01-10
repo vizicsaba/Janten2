@@ -19,6 +19,12 @@ jobs:
     - name: C++ fordító telepítése
       run: sudo apt-get update && sudo apt-get install -y build-essential
 
+    - name: Sketch2 telepítése
+      run: |
+        git clone https://github.com/user/sketch2.git
+        cd sketch2
+        sudo make install
+
     - name: Faktoriális program és teszt buildelése
       run: |
         g++ faktorialis.cpp faktorialis_test.cpp -o faktorialis_test
