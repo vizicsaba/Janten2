@@ -2,6 +2,7 @@
 using namespace std;
 
 // Rekurzív függvény a faktoriális kiszámítására
+//comment
 int faktorialis(int n) {
     if (n <= 1) return 1;
     return n * faktorialis(n - 1);
